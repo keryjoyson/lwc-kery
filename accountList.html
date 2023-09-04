@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Account Names">
+        <div style="padding: 20px;">
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput" value={searchTerm} placeholder="Enter account name" onchange={handleSearchChange}/>
+        
+            
+            
+        </div>
+            
+        <div style="padding:20px">
+            <template if:true={filteredAccountNames}>
+                <ul>
+                    <template for:each={filteredAccountNames} for:item="account">
+                        <li key={account.Id}>{account.Name}</li>
+                    </template>
+                </ul>
+            </template>
+        </div>        
+            
+
+    </lightning-card>
+</template>
